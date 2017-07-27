@@ -8,19 +8,23 @@
     <body>
         <script>
             for (var a = 0; a < 100; a++)
-            {if (a%2 ===0 && a%3===0)
-                {console.log('Fizz Buzz')
-            
-                if (a%2===0)
+            {
+                if (a % 2 === 0 && a % 3 === 0)
                 {
-                    console.log("fizz")
-                }
-                else if (a%3===0)
+                    console.log('Fizz and Buzz')
+                } else if (a % 2 === 0)
                 {
-                    console.log("buzz")
-                }
+                    console.log('Fizz')
+                } else if (a % 3 === 0)
+                {
+                    console.log('Buzz')
+                } else { console.log(a)}
                 
-                else 
+            }     
+
+                
+
+            
         </script>
     </body>
 </html>

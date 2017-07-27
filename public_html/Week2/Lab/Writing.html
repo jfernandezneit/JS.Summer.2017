@@ -3,6 +3,9 @@
 <html>
     <head>
         <title>TODO supply a title</title>
+        <style type="text/css">
+	.border{border:1px solid black;}
+        </style>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -10,6 +13,8 @@
         <div>TODO write content</div>
         <script>
             var str=""
+            var body = document.getElementsByName("body")
+          
             
             var people =[
 		{first:"Jason", last:"Vorhees", credit:"Friday the 13th"},
@@ -33,8 +38,8 @@
             str += "</div>"
             }
             
-            document.body.innerHTML = str
-        
+            document.body.innerHTML = str 
+            
         </script>
     </body>
 </html>
