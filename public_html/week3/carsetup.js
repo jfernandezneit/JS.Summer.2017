@@ -30,7 +30,31 @@ var center = c.width/2;
 //Open up the console and look at the properties for the protocar object
 console.log(JSON.stringify(protocar));
 
-var car={"width":400,"front":100,"rear":100,"roof":100,"color":"#ff0000","sponsor":{"name":"","decal":false},"ft":{"x":550,"y":550,"radius":100,"color":"#000000"},"rt":{"x":350,"y":550,"radius":100,"color":"#000000"},"topLimit":"550"}
+var car = {  
+   "width":400,
+   "front":100,
+   "rear":100,
+   "roof":100,
+   "color":"#ff0000",
+   "sponsor":{  
+      "name":"",
+      "decal":false
+   },
+   "ft":{  
+      "x":550,
+      "y":550,
+      "radius":100,
+      "color":"#000000"
+   },
+   "rt":{  
+      "x":350,
+      "y":550,
+      "radius":100,
+      "color":"#000000"
+   },
+   "topLimit":"550"
+}
+
 
 
 var timer = setInterval(animate, 1000/60);
@@ -47,34 +71,37 @@ function animate()
                 car.color=colorInput.value
 		
 		//convert the roofSlider's value to a number and assign it to the car's roof property
-                parseInt(roofSlider.value,10)
-                car.roof=roofSlider.value
+                
+                car.roof = parseInt(roofSlider.value, 10)
         
 		//convert the frontSlider's value to a number and assign it to the car's front property
-                parseInt(frontSlider.value,10)
-                car.front=frontSlider.value
+                
+                car.front=parseInt(frontSlider.value,10)
        
 		//convert the rearSlider's value to a number and assign it to the car's rear property
-                parseInt(rearSlider.value,10)
-                car.rear=rearSlider.value
+                
+                car.rear=parseInt(rearSlider.value,10)
        
 		//convert the carWidth's value to a number and assign it to the car's width property
                 car.width=carWidth.value
        
 		//set the roof, front and rear sliders' .max attributes to the car's topLimit property
-                car.rear=Math.max(0,car.topLimit)
-                car.front=Math.max(0,car.topLimit)
-                car.roof=Math.max(0,car.topLimit)
+                roofSlider.max=car.topLimit
+                rearSlider.max=car.topLimit
+                rearSlider.max=car.topLimit
+                
         
 		//set the car's front and rear tires' radius properties equal to the ft and rt slider's values
-		car.ft=ftSlider.value
-                car.rt=rtSlider.value
+		car.ft.radius=ftSlider.value
+                car.rt.radius=rtSlider.value
 		//create a variable called wd and assign the wheelDistance slider's value to it as a Number.
-                parseInt(wheelDistance.value,10)
-		var wd = wheelDistance.value
+                
+		var wd = parseInt(wheelDistance.value,10)
+                
 		//set the car's front tire's x property equal to the center plus wd.
-		
+		car.ft.x = (car.width/2) + wd
 		//set the car's rear tire's x property equal to the center minus wd.
+                car.rt.x = (car.width/2) - wd
 		
   
 		
@@ -91,9 +118,17 @@ function animate()
 			2. set the car's sponsor decal to false
 		
 		*/
-               //if(sponsorNamebox.checked == true)
-               //{    car.sponsor.value=true
-                //   car.sponsor.value
+               if(sponsored.checked == true)
+               {   sponsorNameBox.disabled = false; 
+                   car.sponsor.decal.value=true
+                   car.sponsor.name=sponsorNameBox.value
+                    
+                }
+                
+                else{ 
+                    sponsorNameBox.disabled = true;
+                    car.sponsor.value=false
+                }
                 
 		
 	
