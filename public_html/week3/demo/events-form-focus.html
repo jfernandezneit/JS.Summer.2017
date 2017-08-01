@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        
+         <p>
+            Rating: <input name="rating" type="number" max="5" min="1" />
+            
+         
+             <input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
+             <input type="button" name="Submit" value="Submit">
+             
+            
+        </p>
+        
+        <script>
+            
+            
+            document.querySelector('input[name="rating"]').addEventListener("focus", function(){
+               this.style.backgroundColor = 'lightblue';
+               
+            });
+            
+            var box = document.querySelector('input[name="vehicle"]')
+            
+            document.querySelector('input[name="vehicle"]').addEventListener("change", check)
+            document.querySelector('input[name="Submit"]').addEventListener("click", change  )
+            
+            function check(){
+                console.log(this.checked); 
+            }
+            
+            function change(){
+                box.checked = ! box.checked;
+            }
+            
+            function reset(e) {
+                this.value = 5;
+                console.log(e);
+                this.style.backgroundColor = 'transparent';
+            }
+            
+              document.querySelector('input[name="rating"]').addEventListener("blur", reset);
+            
+            </script>
+    </body>
+</html>
