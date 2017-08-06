@@ -12,13 +12,13 @@ var center = c.width/2;
 
 	var roofSlider= document.querySelector("#roof-height > input");
 
-	var ftSlider= document.querySelector("#front-pitch > input");
+	var ftSlider= document.querySelector("#front-tire > input");
 
-	var rtSlider= document.querySelector("#rear-pitch > input");
+	var rtSlider= document.querySelector("#rear-tire > input");
 
-	var rearSlider= document.querySelector("#rear-tire > input");
+	var rearSlider= document.querySelector("#rear-pitch > input");
 
-	var frontSlider= document.querySelector("#front-tire > input");
+	var frontSlider= document.querySelector("#front-pitch > input");
 
 	var colorInput= document.querySelector("#color > input");
 
@@ -68,7 +68,7 @@ function animate()
 		
                 drawCar(car) 
 		//Assign the colorInput's value to the car's color property
-                car.color=colorInput.value
+                car.color = colorInput.value
 		
 		//convert the roofSlider's value to a number and assign it to the car's roof property
                 
@@ -76,32 +76,32 @@ function animate()
         
 		//convert the frontSlider's value to a number and assign it to the car's front property
                 
-                car.front=parseInt(frontSlider.value,10)
+                car.front = parseInt(frontSlider.value,10)
        
 		//convert the rearSlider's value to a number and assign it to the car's rear property
                 
-                car.rear=parseInt(rearSlider.value,10)
+                car.rear = parseInt(rearSlider.value,10)
        
 		//convert the carWidth's value to a number and assign it to the car's width property
-                car.width=carWidth.value
+                car.width = parseInt(carWidth.value,10)
        
 		//set the roof, front and rear sliders' .max attributes to the car's topLimit property
-                roofSlider.max=car.topLimit
-                rearSlider.max=car.topLimit
-                rearSlider.max=car.topLimit
+                roofSlider.max = car.topLimit
+                rearSlider.max = car.topLimit
+                frontSlider.max = car.topLimit
                 
         
 		//set the car's front and rear tires' radius properties equal to the ft and rt slider's values
-		car.ft.radius=ftSlider.value
-                car.rt.radius=rtSlider.value
+		car.ft.radius = ftSlider.value
+                car.rt.radius = rtSlider.value
 		//create a variable called wd and assign the wheelDistance slider's value to it as a Number.
                 
 		var wd = parseInt(wheelDistance.value,10)
                 
 		//set the car's front tire's x property equal to the center plus wd.
-		car.ft.x = (car.width/2) + wd
+		car.ft.x = car.width + wd
 		//set the car's rear tire's x property equal to the center minus wd.
-                car.rt.x = (car.width/2) - wd
+                car.rt.x = (car.width / 2) - wd
 		
   
 		
