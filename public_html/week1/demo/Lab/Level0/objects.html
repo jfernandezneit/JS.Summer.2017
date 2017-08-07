@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <title>TODO supply a title</title>
@@ -8,13 +7,14 @@
     </head>
     <body>
         <div>TODO write content</div>
+
         <script>
+
             var myArray = []
 
             for (var a = 0; a < 100; a++)
             {
                 myArray[a] = {index: a, label: undefined}
-                 
 
                 if (a % 2 === 0 && a % 3 === 0)
                 {
@@ -26,13 +26,11 @@
                 {
                     myArray[a].label = 'Buzz'
                 }
-                for (value in myArray[a] )
-                 {
-                     console.log({value})
-                 }
 
             }
-            
+
+            console.log(myArray)
         </script>
     </body>
+
 </html>
