@@ -10,12 +10,6 @@
         
          <p>
             Rating: <input name="rating" type="number" max="5" min="1" />
-            
-         
-             <input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
-             <input type="button" name="Submit" value="Submit">
-             
-            
         </p>
         
         <script>
@@ -23,25 +17,9 @@
             
             document.querySelector('input[name="rating"]').addEventListener("focus", function(){
                this.style.backgroundColor = 'lightblue';
-               
             });
             
-            var box = document.querySelector('input[name="vehicle"]')
-            
-            document.querySelector('input[name="vehicle"]').addEventListener("change", check)
-            document.querySelector('input[name="Submit"]').addEventListener("click", change  )
-            
-            function check(){
-                console.log(this.checked); 
-            }
-            
-            function change(){
-                box.checked = ! box.checked;
-            }
-            
-            function reset(e) {
-                this.value = 5;
-                console.log(e);
+            function reset() {
                 this.style.backgroundColor = 'transparent';
             }
             

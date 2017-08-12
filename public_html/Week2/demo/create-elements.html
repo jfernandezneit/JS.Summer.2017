@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <title>TODO supply a title</title>
@@ -10,18 +9,18 @@
         <div>TODO write content</div>
         
         <script>
-            var p = document.createElement("p");
+var p = document.createElement('p');
+var textnode = document.createTextNode('Water'); 
+p.appendChild(textnode);
+document.body.appendChild(p);
+     
+   
+var div = document.querySelector('div');
+
+div.appendChild(p);
             
-            var textnode =document.createTextNode('Water');
             
-            p.appendChild(textnode);
-            
-            document.body.appendChild(p);
-            
-            
-            var div = document.querySelector("div");
-            
-            p.appendChild(div);
         </script>
+        
     </body>
 </html>

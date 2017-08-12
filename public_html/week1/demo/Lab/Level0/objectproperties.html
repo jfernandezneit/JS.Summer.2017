@@ -11,13 +11,29 @@
         <script>
             
             var myArray = new Array();
+             var myArray = []
+
+            for (var a = 0; a < 100; a++)
+            {
+                myArray[a] = {index: a, label: undefined}
+                 
+
+                if (a % 2 === 0 && a % 3 === 0)
+                {
+                    myArray[a].label = 'Fizz Buzz'
+                } else if (a % 2 === 0)
+                {
+                    myArray[a].label = 'Fizz'
+                    console.log(myArray[a].label)
+                } else if (a % 3 === 0)
+                {
+                    myArray[a].label = 'Buzz'
+                }
+                
+
+            }
          
-         myArray[0] = "Fiz Buzz";
-         myArray[1] = "Fiz";
-         myArray[2] = "undefined"
-         myArray[3] = "Buzz"
          
-         console.log(myArray[1]);
             
         </script>
     </body>
