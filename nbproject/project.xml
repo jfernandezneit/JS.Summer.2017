@@ -3,7 +3,11 @@
     <type>org.netbeans.modules.web.clientproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/clientside-project/1">
+<<<<<<< HEAD
             <name>JavaScriptSummer2017</name>
+=======
+            <name>JS.Summer.2017</name>
+>>>>>>> origin/master
         </data>
     </configuration>
 </project>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script>
+            var myArray = []
+
+            for (var a = 0; a < 100; a++)
+            {
+                myArray[a] = {index: a, label: undefined}
+                 
+
+                if (a % 2 === 0 && a % 3 === 0)
+                {
+                    myArray[a].label = 'Fizz Buzz'
+                } else if (a % 2 === 0)
+                {
+                    myArray[a].label = 'Fizz'
+                } else if (a % 3 === 0)
+                {
+                    myArray[a].label = 'Buzz'
+                }
+                for (value in myArray[a] )
+                 {
+                     console.log(value)
+                 }
+
+            }
+            
+        </script>
+    </body>
+</html>
