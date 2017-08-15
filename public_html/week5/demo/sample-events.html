@@ -28,9 +28,11 @@
                 console.log('window loaded');
             });
             
-            $(document).ready(function() {
+            $(document).ready(ready);
+            
+            function ready () {
                 console.log('document loaded');
-            });
+            }
            
            $("div").on("click", function(){
                 $(this).hide('slow');
