@@ -16,3 +16,17 @@
  */
 
 
+/*
+ * What you need to know to complete this:
+ * 
+ * Selecting DOM elements on the page.
+ * Creating and using functions.
+ * Adding an event listener
+ * Getting value data from a input form
+ * saving data as an array of JSON objects
+ * Loop through an array of JSON objects
+ * Adding and Removing HTML from a page
+ * 
+ */
+
+
