@@ -7,31 +7,30 @@
     </head>
     <body>
         <div>TODO write content</div>
-        
+
         <script>
-         
-         var myArray = []
-          
-        for (var a = 0; a < 100; a++)
+
+            var myArray = []
+
+            for (var a = 0; a < 100; a++)
             {
-             myArray[a]={index:a, label:undefined }   
-            
-               if ( a%2 === 0 && a%3 === 0)
+                myArray[a] = {index: a, label: undefined}
+
+                if (a % 2 === 0 && a % 3 === 0)
                 {
                     myArray[a].label = 'Fizz Buzz'
-                } else if (a%2 === 0)
+                } else if (a % 2 === 0)
                 {
                     myArray[a].label = 'Fizz'
-                }
-                else if (a%3===0)
+                } else if (a % 3 === 0)
                 {
-                     myArray[a].label = 'Buzz'
+                    myArray[a].label = 'Buzz'
                 }
-          
+
             }
-            
+
             console.log(myArray)
         </script>
     </body>
-   
+
 </html>
