@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        Number <input name = "num" type = "text" >
+        <button>Test</button>
+        
+        
+        <script>
+            let submitButton = document.querySelector('button');
+            
+            submitButton.addEventListener('click', checkInput);
+            
+            function checkInput ()
+            {
+                let numberOnlyRE = /^[0-9]+$/
+                let inputField = document.querySelector('input')
+                
+                if (numberOnlyRE.test(inputField.value))
+                {
+                    inputField.style.borderColor = 'green';
+                }
+                else
+                {
+                    inputField.style.borderColor = 'red';
+                }
+                
+            }
+            
+            
+             
+            
+            
+        </script>
+    </body>
+</html>

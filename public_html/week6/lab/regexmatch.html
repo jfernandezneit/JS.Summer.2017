@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        Address <input name = "address" size = "100" value = "99 Althea st Providence, RI 02907">
+        <button>Submit</button>
+        
+        
+        <script>
+            let submitBtn = document.querySelector('button')
+            
+            submitBtn.addEventListener('click', matchZip);
+            
+            function matchZip()
+            {
+                let zipOnlyRE = /[0-9]{5}$/
+                let inputField = document.querySelector('input')
+                let value = inputField.value;
+                
+                let result = value.match(zipOnlyRE);
+                let str = ''
+                
+                if (result)
+                {
+                    str += '<p>'
+                    str += result
+                    str += '</p'
+                    
+                }
+                else
+                {
+                    str += '<p>'
+                    str += 'Zip Code could not be found'
+                    str += '</p'
+                }
+                document.body.innerHTML = str
+                
+            }
+            
+            
+            
+            
+            
+        </script>
+    </body>
+</html>

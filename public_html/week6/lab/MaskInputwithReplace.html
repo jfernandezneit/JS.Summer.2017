@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+         Social <input name = "phnumber"/>
+        <script>
+            let inputField = document.querySelector('input')
+            var val = ' ';
+
+            inputField.addEventListener('blur', secret)
+            inputField.addEventListener('focus', unFormat )
+            
+            
+            function secret()
+            {
+                let regFormat = /([0-9]{3})([0-9]{2})([0-9]{4})/ 
+                val = this.value
+                console.log(this.value)
+                this.value = this.value.replace(regFormat,'###-##-$3')
+                
+                //this.value = this.value.replace(regTest, '')                
+            }
+            
+            function unFormat ()
+            {
+                let regTest = /[^0-9]+/g
+
+                this.value = val.replace(regTest,'')
+                
+                
+            }
+
+
+        </script>
+    </body>
+</html>
