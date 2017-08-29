@@ -90,7 +90,7 @@ and open the template in the editor.
                     window.drawRect();
                     // x y / w h
                     setTimeout(window.moveRectX, 100);
-                } else if ( window.xaxisBlue < window.finishLine)
+                } else if (window.xaxisBlue < window.finishLine)
                 {
                     window.drawClear();
                     window.drawLine();
@@ -99,22 +99,22 @@ and open the template in the editor.
                     window.drawRect();
                     // x y / w h
                     setTimeout(window.moveRectX, 100);
-                }
+                } 
                 else {
                     window.reset()
                 }
+                if (xaxisRed === finishLine)
+                {
+                    window.ctx.font = "16pt Helvetica";
+                    window.ctx.fillText("Red car wins !!", (window.can.width / 2) - 100, window.can.height / 2)
+
+                } else if (xaxisBlue === finishLine)
+                {
+                    window.ctx.font = "16pt Helvetica";
+                    window.ctx.fillText("Blue car wins !!", (window.can.width / 2), window.can.height / 2)
+                }
             }
-            if (xaxisRed === finishLine)
-            {
-                window.ctx.font = "16pt Helvetica";
-                window.ctx.fillText("Red car wins !!", (window.can.width / 2) - 100, window.can.height / 2)
-                
-            }
-            else if (xaxisBlue === finishLine)
-            {
-                window.ctx.font = "16pt Helvetica";
-                window.ctx.fillText("Blue car wins !!", (window.can.width / 2), window.can.height / 2)
-            }
+
 
 
             btn.addEventListener('click', moveRectX)
