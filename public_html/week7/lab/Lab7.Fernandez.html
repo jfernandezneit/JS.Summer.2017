@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TO DO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #race{
+                height: 150px;
+                width: 750px;
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+
+
+        <canvas id="race" width="750" height="150"></canvas>
+
+        <br />
+
+        <button id = "play">Play</button>
+
+
+        <script type = "text/javascript">
+            var width = 50;
+            var height = 30;
+
+            var xaxisRed = 0;
+            var xaxisBlue = 0
+            var can = document.querySelector('#race');
+            var ctx = can.getContext('2d');
+            var btn = document.querySelector('#play')
+            var finishLine = (window.can.width - 50);
+
+
+
+
+            function drawLine() {
+                /* we start a path and set the pen to a x,y position.
+                 * when we move to, think of picking up the pen and putting it in that position
+                 * when we line to we drag our pen to the next x,y position
+                 * once we complete our path we stroke the results so it displays on the page.
+                 */
+                window.ctx.beginPath();
+                window.ctx.moveTo(700, 0); //x, y
+                window.ctx.lineTo(700, 150);
+                window.ctx.stroke();
+
+            }
+            window.drawLine();
+
+
+            function drawClear() {
+                window.ctx.clearRect(0, 0, window.can.width, window.can.height); // x y / w h
+            }
+
+            function randNum(max) {
+                return Math.ceil(Math.random() * max) + 1;
+            }
+
+
+
+
+
+            function drawRect() {
+                /* the fillStyle will color in the whole box with the color selected */
+
+                window.ctx.fillStyle = "red";
+                window.ctx.fillRect(window.xaxisRed, 20, 50, 30);
+
+                window.ctx.fillStyle = "blue";
+                window.ctx.fillRect(window.xaxisBlue, 100, 50, 30);
+
+            }
+
+
+            function moveRectX() {
+
+                if (window.xaxisRed < window.finishLine) {
+                    window.drawClear();
+                    window.drawLine();
+                    xaxisRed += randNum(20);
+                    xaxisBlue += randNum(20);
+                    window.drawRect();
+                    // x y / w h
+                    setTimeout(window.moveRectX, 100);
+                } else if ( window.xaxisBlue < window.finishLine)
+                {
+                    window.drawClear();
+                    window.drawLine();
+                    xaxisRed += randNum(20);
+                    xaxisBlue += randNum(20);
+                    window.drawRect();
+                    // x y / w h
+                    setTimeout(window.moveRectX, 100);
+                }
+                else {
+                    window.reset()
+                }
+            }
+            if (xaxisRed === finishLine)
+            {
+                window.ctx.font = "16pt Helvetica";
+                window.ctx.fillText("Red car wins !!", (window.can.width / 2) - 100, window.can.height / 2)
+                
+            }
+            else if (xaxisBlue === finishLine)
+            {
+                window.ctx.font = "16pt Helvetica";
+                window.ctx.fillText("Blue car wins !!", (window.can.width / 2), window.can.height / 2)
+            }
+
+
+            btn.addEventListener('click', moveRectX)
+
+            function reset() {
+
+                window.xaxisRed = 0;
+                window.xaxisBlue = 0;
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>
