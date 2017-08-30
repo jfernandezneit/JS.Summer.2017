@@ -9,7 +9,12 @@
         <div>TODO write content</div>
         
         <script>
-            
+            /* 
+             * The date is clustred in one line.  Create 3 varialbes to seperate the date.
+             * One for the new Date object.
+             * One for the config.
+             * One for the Date Format
+             */
             let todayFormattedDate = new Date().toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' })
             let formattedDate = new Date('2014-09-12 11:03:02').toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' })
                         
