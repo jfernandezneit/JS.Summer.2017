@@ -36,7 +36,7 @@ and open the template in the editor.
             var can = document.querySelector('#race');
             var ctx = can.getContext('2d');
             var btn = document.querySelector('#play')
-            var finishLine = (window.can.width - 50);
+            var finishLine = (window.can.width - 100);
 
 
 
@@ -81,38 +81,21 @@ and open the template in the editor.
 
 
             function moveRectX() {
+                btn.style.display="none"
 
-                if (window.xaxisRed < window.finishLine) {
+                if (window.xaxisRed < window.finishLine && window.xaxisBlue < window.finishLine) {
                     window.drawClear();
                     window.drawLine();
                     xaxisRed += randNum(20);
                     xaxisBlue += randNum(20);
                     window.drawRect();
                     // x y / w h
-                    setTimeout(window.moveRectX, 100);
-                } else if (window.xaxisBlue < window.finishLine)
-                {
-                    window.drawClear();
-                    window.drawLine();
-                    xaxisRed += randNum(20);
-                    xaxisBlue += randNum(20);
-                    window.drawRect();
-                    // x y / w h
-                    setTimeout(window.moveRectX, 100);
-                } 
-                else {
+                    setTimeout(window.moveRectX, 50);
+                } else if (window.xaxisRed >= window.finishLine || window.xaxisBlue >= window.finishLine) {
+                    clearTimeout(window.moveRectX)
                     window.reset()
                 }
-                if (xaxisRed === finishLine)
-                {
-                    window.ctx.font = "16pt Helvetica";
-                    window.ctx.fillText("Red car wins !!", (window.can.width / 2) - 100, window.can.height / 2)
-
-                } else if (xaxisBlue === finishLine)
-                {
-                    window.ctx.font = "16pt Helvetica";
-                    window.ctx.fillText("Blue car wins !!", (window.can.width / 2), window.can.height / 2)
-                }
+                
             }
 
 
@@ -120,9 +103,21 @@ and open the template in the editor.
             btn.addEventListener('click', moveRectX)
 
             function reset() {
+                if (xaxisRed >= window.finishLine)
+                {
+                    window.ctx.font = "16pt Helvetica";
+                    window.ctx.fillText("Red car wins !!", (window.can.width / 2) - 100, window.can.height / 2)
+
+                } else if (xaxisBlue >= window.finishLine)
+                {
+                    window.ctx.font = "16pt Helvetica";
+                    window.ctx.fillText("Blue car wins !!", (window.can.width / 2), window.can.height / 2)
+                }
 
                 window.xaxisRed = 0;
                 window.xaxisBlue = 0;
+                
+                btn.style.display="block"
 
             }
 

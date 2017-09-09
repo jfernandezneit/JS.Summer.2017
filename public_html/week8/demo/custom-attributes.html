@@ -12,7 +12,7 @@
         </style>
     </head>
     <body>
-        <div data-index="3">TODO write content</div>
+        <div data-time = "" data-index="3" >TODO write content</div>
         
         <script>
             /*
@@ -28,9 +28,15 @@
             div.addEventListener('click', function(){
                 let randIndex = Math.ceil(Math.random()*10) + 1
                 let time = new Date().getTime()
+                //one way of doing it 
+                //this.setAttribute('data-time', time)
+                
+                //the prefered way of doing it 
+                this.dataset.time = time
                 // this.setAttribute('data-index', randIndex)
                 this.dataset.index = randIndex
-                console.log( this.dataset, this.dataset.index, this.getAttribute('data-index'));                
+                console.log(this.dataset.time)
+                //console.log( this.dataset, this.dataset.index, this.getAttribute('data-index'));                
             })  
         </script>
     </body>

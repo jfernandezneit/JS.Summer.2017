@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="list"></div>
+        <div class="about"></div>
+        <div class="registered"></div>
+        
+        <script>
+        
+        var content = document.querySelector("div.list")
+        var myRequest = 'companies.json'
+        var myStuff 
+        var string = ""
+        var about = document.querySelector(".about")
+        var reg = document.querySelector(".registered")
+            
+            fetch(myRequest).then(handleResponse)
+            .then(responseSuccess)
+            .catch(responseError);
+    
+            function handleResponse(response) {
+                let contentType = response.headers.get("content-type");
+               
+                if(contentType && contentType.includes("json")) {
+                  return response.json();
+                }
+                throw new TypeError("Oops, we haven't got JSON!");
+            }
+            
+            function responseSuccess(json) {
+                window.myStuff = json
+                for (let index = 0; index < myStuff.length ; index++)
+                {
+                  
+                  string += `<div class="company" data-index="${index}">` 
+                  string += myStuff[index].company  
+                  string += '</div>'
+             }
+             content.innerHTML += string
+             
+             let companies = document.querySelectorAll(".company")
+             for(let index = 0; index < companies.length; index++)
+             {
+                 companies[index].addEventListener('click', function(){
+                    let compIndex = this.dataset.index
+                    about.innerHTML = myStuff[compIndex].about
+                    let tempDate = new Date (myStuff[compIndex].registered)
+                    let formattedDate = tempDate.toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' })
+                    reg.innerHTML = formattedDate;
+                 })
+             }
+             /*
+             window.addEventListener('click', function (){
+                 
+             })
+             */
+            }
+            
+            function responseError(error) {
+                content.innerHTML = error;
+            }
+        
+        
+        
+        </script>
+    </body>
+    
+</html>

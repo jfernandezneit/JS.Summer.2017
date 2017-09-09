@@ -15,9 +15,14 @@
              * One for the config.
              * One for the Date Format
              */
-            let todayFormattedDate = new Date().toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' })
-            let formattedDate = new Date('2014-09-12 11:03:02').toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' })
-                        
+            
+            
+            let today = new Date()
+            let config = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric'}
+            let format = new Date('2014-09-12 11:03:02').toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' })
+            
+            let todayFormattedDate = today.toLocaleDateString("en-US", config)
+            let formattedDate = format
                         
             document.querySelector('div').innerHTML = `<p>formattedDate: ${formattedDate}</p>
             <p>todayFormattedDate: ${todayFormattedDate}</p>`
